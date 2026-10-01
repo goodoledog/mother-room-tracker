@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a3a2a">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Lucky Dog">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <title>Lucky Dog — Mother Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:       #2d6a4f;
+    --green-dark:  #1a3a2a;
+    --green-light: #52b788;
+    --green-pale:  #d8f3dc;
+    --blue:        #1a5276;
+    --blue-light:  #aed6f1;
+    --blue-pale:   #d6eaf8;
+    --amber:       #f39c12;
+    --amber-pale:  #fef9e7;
+    --red:         #c0392b;
+    --red-pale:    #fdedec;
+    --gray:        #f4f5f0;
+    --gray-mid:    #c8cdc0;
+    --text:        #1c1f1a;
+    --text-muted:  #6b7468;
+    --white:       #ffffff;
+    --radius:      14px;
+    --radius-sm:   8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--green-dark);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .app-header {
+    background: var(--green-dark);
+    padding: 52px 20px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .app-header h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 4px;
+  }
+
+  .app-header .week-label {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .badge-green  { background: rgba(82,183,136,0.18); color: var(--green-light); }
+  .badge-amber  { background: rgba(243,156,18,0.18);  color: var(--amber); }
+  .badge-red    { background: rgba(192,57,43,0.25);   color: #e74c3c; }
+  .badge-blue   { background: rgba(26,82,118,0.3);    color: var(--blue-light); }
+  .badge .dot   { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+  /* ── MAIN SCROLL AREA ── */
+  .main {
+    background: var(--gray);
+    border-radius: 24px 24px 0 0;
+    min-height: calc(100vh - 160px);
+    padding: 20px 16px 100px;
+    margin-top: 4px;
+  }
+
+  /* ── SETUP SCREEN ── */
+  .setup-screen {
+    padding: 24px 0;
+  }
+
+  .setup-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .setup-card h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .setup-card input, .setup-card select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e0e3dc;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--gray);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .setup-card input:focus, .setup-card select:focus {
+    border-color: var(--green);
+    background: var(--white);
+  }
+
+  .setup-card .hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    text-align: center;
+  }
+
+  .btn:active { transform: scale(0.97); }
+  .btn-green  { background: var(--green); color: var(--white); }
+  .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+  .btn-red    { background: var(--red); color: var(--white); }
+
+  /* ── SECTION HEADERS ── */
+  .section-hdr {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0 10px;
+  }
+
+  .section-hdr .section-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .section-hdr h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .section-hdr .pallet-tag {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-family: 'Space Mono', monospace;
+    white-space: nowrap;
+  }
+
+  /* ── TASK CARDS ── */
+  .task-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: opacity 0.2s;
+  }
+
+  .task-card.done { opacity: 0.5; }
+
+  .task-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .task-check {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--gray-mid);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    font-size: 14px;
+  }
+
+  .task-card.done .task-check {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+
+  .task-info { flex: 1; min-width: 0; }
+
+  .task-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .task-card.done .task-name {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .task-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  .task-expand {
+    font-size: 11px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .task-card.expanded .task-expand { transform: rotate(180deg); }
+
+  .task-instructions {
+    display: none;
+    padding: 0 16px 14px 56px;
+    border-top: 1px solid var(--gray);
+  }
+
+  .task-card.expanded .task-instructions { display: block; }
+
+  .task-instructions ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .task-instructions li {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    gap: 8px;
+  }
+
+  .task-instructions li:last-child { border-bottom: none; }
+  .task-instructions li::before { content: '→'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* ── CONDITIONAL TASK ── */
+  .cond-card {
+    background: var(--red-pale);
+    border: 1.5px solid rgba(192,57,43,0.2);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+
+  .cond-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .cond-icon { font-size: 18px; flex-shrink: 0; }
+
+  .cond-info { flex: 1; }
+  .cond-name { font-size: 14px; font-weight: 600; color: var(--red); }
+  .cond-trigger { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  .cond-instructions {
+    display: none;
+    padding: 0 16px 12px 16px;
+    border-top: 1px solid rgba(192,57,43,0.15);
+  }
+
+  .cond-card.expanded .cond-instructions { display: block; }
+
+  .cond-instructions li {
+    font-size: 13px;
+    color: var(--text);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(192,57,43,0.1);
+    display: flex;
+    gap: 8px;
+  }
+
+  .cond-instructions li:last-child { border-bottom: none; }
+  .cond-instructions li::before { content: '→'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+  /* ── SALT RESET ALERT ── */
+  .alert-card {
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .alert-red   { background: var(--red-pale); border: 1.5px solid rgba(192,57,43,0.25); }
+  .alert-green { background: #d8f3dc; border: 1.5px solid rgba(45,106,79,0.2); }
+  .alert-amber { background: var(--amber-pale); border: 1.5px solid rgba(243,156,18,0.3); }
+
+  .alert-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+  .alert-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .alert-red   .alert-body h4 { color: var(--red); }
+  .alert-green .alert-body h4 { color: var(--green); }
+  .alert-amber .alert-body h4 { color: var(--amber); }
+  .alert-body p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .alert-body .pallet-list { font-family: 'Space Mono', monospace; font-size: 12px; margin-top: 6px; font-weight: 700; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap {
+    background: rgba(255,255,255,0.12);
+    border-radius: 100px;
+    height: 4px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--green-light);
+    border-radius: 100px;
+    transition: width 0.4s ease;
+  }
+
+  /* ── TABS ── */
+  .tab-bar {
+    display: flex;
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 3px;
+    margin-bottom: 16px;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .tab.active { background: var(--white); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid #e8ebe4;
+    display: flex;
+    padding: 10px 0 24px;
+    z-index: 200;
+  }
+
+  .nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px 0;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-btn.active { color: var(--green); }
+  .nav-btn .nav-icon { font-size: 22px; }
+
+  /* ── SCREENS ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ── LOG SCREEN ── */
+  .log-entry {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .log-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .log-dot.root    { background: var(--green); }
+  .log-dot.prune   { background: var(--blue); }
+  .log-dot.salt    { background: var(--red); }
+  .log-dot.trich   { background: var(--amber); }
+
+  .log-info { flex: 1; }
+  .log-title { font-size: 14px; font-weight: 600; }
+  .log-meta  { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-family: 'Space Mono', monospace; }
+  .log-time  { font-size: 11px; color: var(--text-muted); font-family: 'Space Mono', monospace; }
+
+  /* ── SETTINGS ── */
+  .settings-row {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .settings-row label { font-size: 14px; font-weight: 500; }
+  .settings-row .settings-val { font-size: 12px; color: var(--text-muted); font-family: 'Space Mono', monospace; max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── SHEET SYNC INDICATOR ── */
+  .sync-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 8px 0 0;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-mid); }
+  .sync-dot.synced { background: var(--green-light); }
+  .sync-dot.syncing { background: var(--amber); animation: pulse 1s infinite; }
+  .sync-dot.error   { background: var(--red); }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ── BLOCK SELECTOR ── */
+  .block-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .block-btn {
+    flex: 1;
+    padding: 12px 0;
+    border: 2px solid #e0e3dc;
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .block-btn.active {
+    border-color: var(--green);
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .divider {
+    height: 1px;
+    background: #e8ebe4;
+    margin: 16px 0;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+  }
+
+  .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .empty-state p { font-size: 14px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SETUP SCREEN (shown on first run)                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="setupScreen" style="display:none; background:var(--green-dark); min-height:100vh; padding:60px 20px 40px;">
+  <div style="margin-bottom:28px;">
+    <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--green-light);text-transform:uppercase;margin-bottom:8px;">Lucky Dog Cannabis</div>
+    <div style="font-size:26px;font-weight:700;color:var(--white);line-height:1.3;">Mother Room<br>Task Tracker</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:8px;">Connect to your Google Sheet to get started.</div>
+  </div>
+
+  <div class="setup-card">
+    <h3>Sheet Web App URL</h3>
+    <input type="url" id="scriptUrl" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off" autocorrect="off" spellcheck="false">
+    <div class="hint">In the Mother Room sheet: Extensions → Apps Script → Deploy → Web app. Paste the URL ending in <strong>/exec</strong>.</div>
+  </div>
+
+  <div class="setup-card">
+    <h3>Your Name (optional)</h3>
+    <input type="text" id="staffName" placeholder="e.g. Mike" autocomplete="off">
+    <div class="hint">Logged with each completed task.</div>
+  </div>
+
+  <div style="margin-top:8px;">
+    <button class="btn btn-green" onclick="saveSetup()">Connect & Start →</button>
+    <div id="setupError" style="color:#e74c3c;font-size:13px;margin-top:10px;text-align:center;display:none;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- MAIN APP                                             -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div id="appScreen" style="display:none;">
+
+  <!-- Header -->
+  <div class="app-header">
+    <h1>Lucky Dog Cannabis</h1>
+    <div class="week-label" id="weekLabel">Loading...</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="header-meta" id="headerMeta"></div>
+    </div>
+    <div id="syncStatus" class="sync-status">
+      <div class="sync-dot" id="syncDot"></div>
+      <span id="syncText">Not synced</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+
+    <!-- TASKS SCREEN -->
+    <div id="screenTasks" class="screen active">
+
+      <!-- Block selector -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);font-family:'Space Mono',monospace;margin-bottom:10px;">Current Block</div>
+        <div class="block-selector" id="blockSelector"></div>
+      </div>
+
+      <!-- Salt Reset Alert -->
+      <div id="saltAlert"></div>
+
+      <!-- Trichoderma Alert -->
+      <div id="trichAlert"></div>
+
+      <!-- Tabs: Root / Prune -->
+      <div class="tab-bar">
+        <button class="tab active" id="tabRoot" onclick="switchTab('root')">🌱 Root</button>
+        <button class="tab" id="tabPrune" onclick="switchTab('prune')">✂️ Prune</button>
+      </div>
+
+      <!-- Task lists -->
+      <div id="rootTasks"></div>
+      <div id="pruneTasks" style="display:none;"></div>
+
+    </div>
+
+    <!-- LOG SCREEN -->
+    <div id="screenLog" class="screen">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);font-family:'Space Mono',monospace;margin-bottom:14px;">Completion Log</div>
+      <div id="logList"></div>
+    </div>
+
+    <!-- SETTINGS SCREEN -->
+    <div id="screenSettings" class="screen">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);font-family:'Space Mono',monospace;margin-bottom:14px;">Settings</div>
+
+      <div style="background:var(--white);border-radius:var(--radius);overflow:hidden;margin-bottom:14px;">
+        <div class="settings-row" style="border-bottom:1px solid var(--gray);">
+          <label>Web App URL</label>
+          <span class="settings-val" id="settingsSheetId">—</span>
+        </div>
+        <div class="settings-row" style="border-bottom:1px solid var(--gray);">
+          <label>Staff Name</label>
+          <span class="settings-val" id="settingsName">—</span>
+        </div>
+        <div class="settings-row">
+          <label>Last Sync</label>
+          <span class="settings-val" id="settingsLastSync">Never</span>
+        </div>
+      </div>
+
+      <button class="btn btn-green" onclick="syncFromSheet()" style="margin-bottom:10px;">↻ Sync from Google Sheet</button>
+      <button class="btn btn-outline" onclick="resetAll()" style="margin-bottom:10px;">Change Settings</button>
+      <button class="btn" onclick="clearWeek()" style="background:#fff;border:1.5px solid #e0e3dc;color:var(--text-muted);">Clear This Week's Checks</button>
+    </div>
+
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <button class="nav-btn active" id="navTasks" onclick="showScreen('tasks')">
+      <span class="nav-icon">✅</span>Tasks
+    </button>
+    <button class="nav-btn" id="navLog" onclick="showScreen('log')">
+      <span class="nav-icon">📋</span>Log
+    </button>
+    <button class="nav-btn" id="navSettings" onclick="showScreen('settings')">
+      <span class="nav-icon">⚙️</span>Settings
+    </button>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════
+
+const ROOT_TASKS = [
+  {
+    id: 'root_exterior',
+    name: 'Pot Exterior Cleaning',
+    detail: 'Wipe/rinse fabric pot outside',
+    steps: [
+      'Wipe or rinse the outside of the fabric pot',
+      'Remove salt deposits (white crust) from sidewalls',
+      'Remove any algae buildup — hose exterior thoroughly',
+    ]
+  },
+  {
+    id: 'root_aeration',
+    name: 'Medium Aeration',
+    detail: 'Bamboo probe — 4–6 channels per pot',
+    steps: [
+      'Insert thin bamboo probe around the edges of the root zone',
+      'Create 4–6 vertical air channels per pot — stay near perimeter',
+      'Work slowly — do not shred or sever the main root mass',
+    ]
+  },
+  {
+    id: 'root_surface',
+    name: 'Surface Scrape / Refresh',
+    detail: 'Remove top 1–2 cm compacted medium',
+    steps: [
+      'Lightly remove top 1–2 cm of compacted or crusted medium',
+      'Replace with fresh coco-peat blend if needed',
+      'Discard scraped material — do not return to pot',
+    ]
+  },
+  {
+    id: 'root_ec',
+    name: 'Runoff EC Inspection',
+    detail: 'Water to runoff, check EC',
+    steps: [
+      'Water lightly to collect a runoff sample',
+      'Check EC with your meter',
+      'Log reading in Notes in Pallet_Master',
+      'EC above 3.5 consistently → flag for Salt Reset',
+    ]
+  },
+  {
+    id: 'root_trich',
+    name: 'Trichoderma (if due)',
+    detail: 'RootShield WP — every 3–4 weeks',
+    steps: [
+      'Apply RootShield WP to medium surface or irrigation water',
+      'Ensure even coverage across entire pot surface',
+      'Apply every 3–4 weeks — alternate with Bacillus drench, not same day',
+    ]
+  },
+  {
+    id: 'root_log',
+    name: 'Log Last_Root Date',
+    detail: 'Enter date in Pallet_Master → Last_Root',
+    steps: [
+      'Enter today\'s date in Last_Root column in Pallet_Master',
+      'Log for every pallet worked today',
+    ]
+  },
+];
+
+const PRUNE_TASKS = [
+  {
+    id: 'prune_canopy',
+    name: 'Canopy Reduction',
+    detail: 'Remove 30–40% fan leaves',
+    steps: [
+      'Remove 30–40% of fan leaves to expose inner nodes',
+      'Focus on non-productive and excess shading leaves',
+      'Use clean, sharp scissors — wipe blades between plants',
+      'Do not over-strip — maintain photosynthetic capacity',
+    ]
+  },
+  {
+    id: 'prune_woody',
+    name: 'Remove Woody Growth',
+    detail: 'Cut lignified/woody branches',
+    steps: [
+      'Cut away branches that are old, hard, or woody',
+      'These will not produce viable clones',
+      'Leave only healthy, pliable, actively growing tissue',
+      'Dispose of cuttings immediately',
+    ]
+  },
+  {
+    id: 'prune_structure',
+    name: 'Reset Bonsai Structure',
+    detail: '6–12 active tips per plant',
+    steps: [
+      'Maintain compact bonsai form',
+      'Ensure 6–12 primary active tips remain per plant',
+      'Step back and assess overall shape before finishing',
+    ]
+  },
+  {
+    id: 'prune_interior',
+    name: 'Remove Weak Interior Growth',
+    detail: 'Downward/crossing/inward shoots',
+    steps: [
+      'Remove small downward-growing, crossing, or inward shoots',
+      'Goal: maximum airflow and light penetration',
+      'Remove anything that would not make a strong cut',
+    ]
+  },
+  {
+    id: 'prune_debris',
+    name: 'Clean Debris',
+    detail: 'Remove all fallen leaves from surface',
+    steps: [
+      'Remove all fallen leaves and plant matter from medium surface',
+      'Clear the area around the pot',
+      'Discard — do not compost (pest risk)',
+    ]
+  },
+  {
+    id: 'prune_log',
+    name: 'Log Last_Prune Date',
+    detail: 'Enter date in Pallet_Master → Last_Prune',
+    steps: [
+      'Enter today\'s date in Last_Prune column in Pallet_Master',
+      'Log for every pallet worked today',
+    ]
+  },
+];
+
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+
+let state = {
+  scriptUrl: '',
+  staffName: '',
+  currentBlock: 1,
+  pallets: [],          // [{num, block, lastRoot, lastSurface, lastPrune, lastSalt, daysSinceSalt}]
+  checks: {},           // {taskId: {done: bool, timestamp}}
+  log: [],              // [{taskId, name, pallets, timestamp, staffName}]
+  lastSync: null,
+  activeTab: 'root',
+  trichWeek: false,
+};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('luckydog_state');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      Object.assign(state, parsed);
+    }
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    localStorage.setItem('luckydog_state', JSON.stringify(state));
+  } catch(e) {}
+}
+
+// ═══════════════════════════════════════════════
+// SETUP
+// ═══════════════════════════════════════════════
+
+function saveSetup() {
+  const scriptUrl = document.getElementById('scriptUrl').value.trim();
+  const name      = document.getElementById('staffName').value.trim();
+
+  if (!/^https:\/\/script\.google\.com\/.+\/exec$/.test(scriptUrl)) {
+    document.getElementById('setupError').textContent = 'Paste the Web App URL from Apps Script (starts with https://script.google.com and ends in /exec).';
+    document.getElementById('setupError').style.display = 'block';
+    return;
+  }
+
+  state.scriptUrl = scriptUrl;
+  state.staffName = name || 'Staff';
+  saveState();
+  initApp();
+}
+
+// ═══════════════════════════════════════════════
+// GOOGLE SHEETS API
+// ═══════════════════════════════════════════════
+
+// Reads and writes go through the Apps Script web app bound to the sheet
+// (see apps_script.gs). It runs as the sheet owner, so no API key is needed
+// and the sheet can stay private.
+
+async function syncFromSheet() {
+  setSyncStatus('syncing', 'Syncing...');
+  try {
+    const res = await fetch(state.scriptUrl);
+    if (!res.ok) throw new Error(`Sync error: ${res.status}`);
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'Sync error');
+
+    state.currentBlock = parseInt(data.block) || 1;
+    state.pallets = data.pallets;
+
+    state.lastSync = new Date().toISOString();
+    saveState();
+    setSyncStatus('synced', 'Synced ' + formatTime(new Date()));
+    renderApp();
+  } catch(err) {
+    setSyncStatus('error', 'Sync failed — check Web App URL');
+    console.error(err);
+    throw err;
+  }
+}
+
+async function postToSheet(body) {
+  // text/plain keeps this a "simple" request so Apps Script doesn't need a CORS preflight
+  const res = await fetch(state.scriptUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`Write error: ${res.status}`);
+  const data = await res.json();
+  if (!data.ok) throw new Error(data.error || 'Write error');
+  return data;
+}
+
+// Every completed task goes to the sheet's Task_Log; the two "Log ... Date"
+// tasks also stamp Last_Root / Last_Prune in Pallet_Master.
+async function logCompletionToSheet(taskId, taskName, palletNums) {
+  if (!state.scriptUrl) return;
+
+  setSyncStatus('syncing', 'Writing to sheet...');
+  try {
+    await postToSheet({ action: 'complete', taskId, taskName, pallets: palletNums, staff: state.staffName });
+    setSyncStatus('synced', 'Written ' + formatTime(new Date()));
+    if (['root_log', 'prune_log'].includes(taskId)) {
+      syncFromSheet().catch(() => {}); // pull the new dates back in
+    }
+  } catch(err) {
+    setSyncStatus('error', 'Write failed');
+    console.error(err);
+  }
+}
+
+async function saveBlockToSheet(block) {
+  if (!state.scriptUrl) return;
+  setSyncStatus('syncing', 'Saving block...');
+  try {
+    await postToSheet({ action: 'setBlock', block });
+    setSyncStatus('synced', 'Block saved ' + formatTime(new Date()));
+  } catch(err) {
+    setSyncStatus('error', 'Block not saved');
+    console.error(err);
+  }
+}
+
+// ═══════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════
+
+function renderApp() {
+  // Week label
+  const now = new Date();
+  document.getElementById('weekLabel').textContent = 'Week of ' + now.toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
+
+  // Trich check: every 4 weeks by week number
+  state.trichWeek = (getWeekNumber(now) % 4 === 0);
+
+  // Header badges
+  const rootPallets  = state.pallets.filter(p => p.block === state.currentBlock);
+  const pruneBlock   = state.currentBlock === 5 ? 1 : state.currentBlock + 1;
+  const prunePallets = state.pallets.filter(p => p.block === pruneBlock);
+  const saltDue      = state.pallets.filter(p => p.daysSinceSalt !== null && p.daysSinceSalt >= 35);
+
+  const meta = document.getElementById('headerMeta');
+  meta.innerHTML = `
+    <div class="badge badge-green"><div class="dot"></div>Block ${state.currentBlock}</div>
+    ${state.trichWeek ? '<div class="badge badge-amber"><div class="dot"></div>Trich Week</div>' : ''}
+    ${saltDue.length > 0 ? `<div class="badge badge-red"><div class="dot"></div>${saltDue.length} Salt Due</div>` : ''}
+  `;
+
+  // Block selector
+  const bs = document.getElementById('blockSelector');
+  bs.innerHTML = [1,2,3,4,5].map(b => `
+    <button class="block-btn ${b === state.currentBlock ? 'active' : ''}" onclick="setBlock(${b})">${b}</button>
+  `).join('');
+
+  // Salt alert
+  const saltEl = document.getElementById('saltAlert');
+  if (saltDue.length > 0) {
+    saltEl.innerHTML = `
+      <div class="alert-card alert-red">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-body">
+          <h4>Salt Reset Due</h4>
+          <p>These pallets are 35+ days since last reset:</p>
+          <div class="pallet-list">Pallets: ${saltDue.map(p=>p.num).join(', ')}</div>
+          <p style="margin-top:6px;">Flush 1.0–1.5x vol at 0.5–0.8 EC, pH corrected. 10–15% runoff.</p>
+        </div>
+      </div>`;
+  } else {
+    saltEl.innerHTML = `
+      <div class="alert-card alert-green">
+        <div class="alert-icon">✅</div>
+        <div class="alert-body"><h4>Salt Reset — All Current</h4><p>No pallets overdue.</p></div>
+      </div>`;
+  }
+
+  // Trich alert
+  const trichEl = document.getElementById('trichAlert');
+  if (state.trichWeek) {
+    trichEl.innerHTML = `
+      <div class="alert-card alert-amber">
+        <div class="alert-icon">🍄</div>
+        <div class="alert-body">
+          <h4>Trichoderma This Week</h4>
+          <p>Apply RootShield WP or equivalent. Alternate with Bacillus drench — not same day.</p>
+        </div>
+      </div>`;
+  } else {
+    trichEl.innerHTML = '';
+  }
+
+  // Task lists
+  renderTaskList('rootTasks',  ROOT_TASKS,  rootPallets,  'root');
+  renderTaskList('pruneTasks', PRUNE_TASKS, prunePallets, 'prune');
+
+  // Progress
+  updateProgress();
+
+  // Settings
+  document.getElementById('settingsSheetId').textContent = state.scriptUrl ? '…' + state.scriptUrl.slice(-24) : '—';
+  document.getElementById('settingsName').textContent = state.staffName || '—';
+  document.getElementById('settingsLastSync').textContent = state.lastSync ? formatTime(new Date(state.lastSync)) : 'Never';
+
+  // Log
+  renderLog();
+}
+
+function renderTaskList(containerId, tasks, pallets, prefix) {
+  const el = document.getElementById(containerId);
+  const palletNums = pallets.map(p => p.num);
+  const palletLabel = palletNums.length ? `Pallets: ${palletNums.join(', ')}` : 'No pallets — check block';
+
+  el.innerHTML = `
+    <div style="font-size:12px;font-weight:600;color:var(--text-muted);font-family:'Space Mono',monospace;padding:4px 0 12px;">
+      ${palletLabel}
+    </div>
+  ` + tasks.map(task => {
+    const done = state.checks[task.id]?.done || false;
+    return `
+      <div class="task-card ${done ? 'done' : ''}" id="card_${task.id}">
+        <div class="task-row" onclick="toggleExpand('${task.id}')">
+          <div class="task-check" onclick="toggleCheck(event, '${task.id}', ${JSON.stringify(palletNums).replace(/"/g,"'")})">
+            ${done ? '✓' : ''}
+          </div>
+          <div class="task-info">
+            <div class="task-name">${task.name}</div>
+            <div class="task-detail">${task.detail}</div>
+          </div>
+          <div class="task-expand">▾</div>
+        </div>
+        <div class="task-instructions">
+          <ul>${task.steps.map(s => `<li>${s}</li>`).join('')}</ul>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function renderLog() {
+  const el = document.getElementById('logList');
+  if (!state.log.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><p>No tasks logged yet this session.</p></div>`;
+    return;
+  }
+  const reversed = [...state.log].reverse();
+  el.innerHTML = reversed.map(entry => {
+    const dotClass = entry.taskId.startsWith('root') ? 'root' : entry.taskId.startsWith('prune') ? 'prune' : entry.taskId.includes('salt') ? 'salt' : 'trich';
+    return `
+      <div class="log-entry">
+        <div class="log-dot ${dotClass}"></div>
+        <div class="log-info">
+          <div class="log-title">${entry.name}</div>
+          <div class="log-meta">${entry.pallets.length ? 'Pallets: '+entry.pallets.join(', ') : ''} ${entry.staffName ? '· '+entry.staffName : ''}</div>
+        </div>
+        <div class="log-time">${formatTime(new Date(entry.timestamp))}</div>
+      </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════
+// INTERACTIONS
+// ═══════════════════════════════════════════════
+
+function toggleCheck(event, taskId, palletNums) {
+  event.stopPropagation();
+  const wasDone = state.checks[taskId]?.done || false;
+  const nowDone = !wasDone;
+
+  state.checks[taskId] = { done: nowDone, timestamp: new Date().toISOString() };
+
+  if (nowDone) {
+    const task = [...ROOT_TASKS, ...PRUNE_TASKS].find(t => t.id === taskId);
+    state.log.push({
+      taskId,
+      name: task?.name || taskId,
+      pallets: palletNums,
+      timestamp: new Date().toISOString(),
+      staffName: state.staffName,
+    });
+    logCompletionToSheet(taskId, task?.name, palletNums);
+  }
+
+  saveState();
+  renderApp();
+
+  // Keep current tab
+  if (state.activeTab === 'prune') {
+    document.getElementById('rootTasks').style.display = 'none';
+    document.getElementById('pruneTasks').style.display = 'block';
+  }
+}
+
+function toggleExpand(taskId) {
+  const card = document.getElementById('card_' + taskId);
+  if (card) card.classList.toggle('expanded');
+}
+
+function switchTab(tab) {
+  state.activeTab = tab;
+  document.getElementById('tabRoot').classList.toggle('active', tab === 'root');
+  document.getElementById('tabPrune').classList.toggle('active', tab === 'prune');
+  document.getElementById('rootTasks').style.display  = tab === 'root'  ? 'block' : 'none';
+  document.getElementById('pruneTasks').style.display = tab === 'prune' ? 'block' : 'none';
+}
+
+function setBlock(num) {
+  state.currentBlock = num;
+  saveState();
+  renderApp();
+  saveBlockToSheet(num);
+}
+
+function showScreen(name) {
+  ['Tasks','Log','Settings'].forEach(s => {
+    document.getElementById('screen'+s).classList.toggle('active', s.toLowerCase() === name);
+    document.getElementById('nav'+s).classList.toggle('active', s.toLowerCase() === name);
+  });
+  if (name === 'log') renderLog();
+}
+
+function updateProgress() {
+  const allTasks = [...ROOT_TASKS, ...PRUNE_TASKS];
+  const done = allTasks.filter(t => state.checks[t.id]?.done).length;
+  const pct = Math.round((done / allTasks.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+function clearWeek() {
+  if (confirm('Clear all task checks for this week?')) {
+    state.checks = {};
+    state.log = [];
+    saveState();
+    renderApp();
+  }
+}
+
+function resetAll() {
+  if (confirm('Reset all settings and data?')) {
+    localStorage.removeItem('luckydog_state');
+    location.reload();
+  }
+}
+
+// ═══════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════
+
+function setSyncStatus(status, text) {
+  const dot  = document.getElementById('syncDot');
+  const label = document.getElementById('syncText');
+  dot.className = 'sync-dot ' + status;
+  label.textContent = text;
+}
+
+function getWeekNumber(d) {
+  const onejan = new Date(d.getFullYear(), 0, 1);
+  return Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}
+
+function formatTime(d) {
+  return d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true});
+}
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+
+function initApp() {
+  document.getElementById('setupScreen').style.display = 'none';
+  document.getElementById('appScreen').style.display = 'block';
+  setSyncStatus('syncing', 'Connecting...');
+  syncFromSheet().catch(() => {
+    // If sync fails, still show app with any cached data
+    if (state.pallets.length === 0) {
+      // Generate default 25 pallets
+      state.pallets = Array.from({length:25}, (_,i) => ({
+        num: i+1, block: Math.ceil((i+1)/5),
+        lastRoot:'', lastSurface:'', lastPrune:'', lastSalt:'', daysSinceSalt: null
+      }));
+    }
+    setSyncStatus('error', 'Using cached data');
+    renderApp();
+  });
+}
+
+// Boot
+loadState();
+// Setup link: .../index.html#u=<web app URL> prefills the URL box once, then is removed from the address bar
+(function(){
+  const m = location.hash.match(/[#&]u=([^&]+)/);
+  if (m) {
+    try {
+      const u = decodeURIComponent(m[1]);
+      if (/^https:\/\/script\.google\.com\/.+\/exec$/.test(u)) {
+        if (!state.scriptUrl) document.getElementById('scriptUrl').value = u;
+      }
+    } catch(e) {}
+    history.replaceState(null, '', location.pathname);
+  }
+})();
+if (state.scriptUrl) {
+  initApp();
+} else {
+  document.getElementById('setupScreen').style.display = 'block';
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>
